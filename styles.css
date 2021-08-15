@@ -9,7 +9,13 @@
 
 /* Variables */
 :root {
-
+  --oxford-blue: #011638;
+  --middle-green: #4b7f52;
+  --mantis: #7dd181;
+  --magic-mint-1: #96e8bc;
+  --magic-mint-2: #b6f9c9;
+  --aero-blue: #c9ffe2;
+  --white: #fff;
 }
 
 
@@ -45,8 +51,6 @@ body {
 	line-height: 1.5;
   font-size: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
   padding: 0;
 }
 
@@ -66,9 +70,73 @@ strong {
   font-weight: bold;
 }
 
-/* 1. Layout */
+a {
+  text-decoration: none;
+}
 
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+}
+
+/* 1. Layout */
+.createGrid {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 3rem 1fr 2fr;
+  height: 100vh;
+}
+
+@media screen and (min-aspect-ratio: 3/2) {
+  .createGrid {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 3rem 1fr;
+    grid-template-areas:
+      "header header"
+      "cannedResponseList cannedResponse"
+    ;
+  }
+
+  .createGrid h1 {
+    grid-area: header;
+  }
+
+  #cannedResponseListContainer {
+    grid-area: cannedResponseList;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 3rem;
+  }
+
+  #cannedResponseContainer {
+    grid-area: cannedResponse;
+  }
+}
 
 /* 2. Theme */
+h1 {
+  background-color: var(--magic-mint-1);
+  color: var(--oxford-blue);
+  border-bottom: 1px solid var(--mantis);
+  font-family: monospace;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+}
+
+#cannedResponseListContainer {
+  background-color: var(--aero-blue);
+}
+
+.newCannedResponse {
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 2.1;
+}
+
+#cannedResponseContainer {
+  border-width: 0 8px 8px 0;
+  border-style: solid;
+  border-color: var(--aero-blue);
+}
 
 /* 3. Components */

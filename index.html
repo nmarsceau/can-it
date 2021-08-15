@@ -7,10 +7,15 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="grid">
+    <div class="createGrid">
       <h1>Can It!</h1>
+      <section id="cannedResponseListContainer">
+        <div id="cannedResponseList"></div>
+        <a href="/edit" class="newCannedResponse">&plus;&nbsp;New</a>
+      </section>
+      <section id="cannedResponseContainer"></section>
     </div>
-    <script src="cannedResponseModel.js" type="module"></script>
+    <script src="cannedResponseView.js" type="module"></script>
     <script src="script.js"></script>
   </body>
 </html>
