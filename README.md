@@ -1,2 +1,3 @@
 # Can It!
-Can It! is an online tool for storing and using canned responses.
+Can It! is a PowerShell tool for managing and using canned responses.
+
