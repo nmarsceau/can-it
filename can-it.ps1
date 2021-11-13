@@ -37,7 +37,7 @@ function canItUse {
   Clear-Host;
   Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
   foreach ($field in $cannedResponse.fields) {
-    $cannedResponse.body = $cannedResponse.body.Replace("{{ " + $field + " }}", (Read-Host $field));
+    $cannedResponse.body = $cannedResponse.body.Replace("{{ " + $field + " }}", (Read-Host $field).Trim());
     Clear-Host;
     Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
   }
