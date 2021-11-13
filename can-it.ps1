@@ -57,7 +57,31 @@ function horizontalRule {
 
 function canItAdd {
   param($cannedResponse);
-  Write-Output "`nComing soon :)`n";
+  showCannedResponseForm;
+}
+
+function showCannedResponseForm {
+  param($name, $body, $fields);
+  Add-Type -AssemblyName System.Windows.Forms
+  $form = New-Object system.Windows.Forms.Form
+  $form.ClientSize = '500,300';
+  $form.text = "Canned Response";
+  $form.BackColor = "#ffffff";
+
+  $name = New-Object System.Windows.Forms.TextBox;
+  $name.Size = New-Object System.Drawing.Size(460,30);
+  $name.Location = New-Object System.Drawing.Point(20,50);
+  $form.Controls.Add($name);
+
+  $body = New-Object System.Windows.Forms.TextBox;
+  $body.Multiline = $true;
+  $body.Size = New-Object System.Drawing.Size(460,100);
+  $body.Location = New-Object System.Drawing.Point(20,90);
+  $form.Controls.Add($body);
+
+  
+
+  [void]$form.ShowDialog();
 }
 
 function canItRm {
