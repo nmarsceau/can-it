@@ -55,6 +55,11 @@ function horizontalRule {
   return ("-" * $Host.UI.RawUI.WindowSize.Width);
 }
 
+function canItPeek {
+    param($cannedResponse);
+    Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
+}
+
 function canItAdd {
   param($cannedResponse);
   Write-Output "`nComing soon :)`n";
@@ -84,15 +89,18 @@ switch ($Action) {
     Break;
   }
   "use" {
-    canItUse(selectCannedResponse $Object);
+    canItUse (selectCannedResponse $Object);
     Break;
   }
+  "peek" {
+    canItPeek (selectCannedResponse $Object);
+  }
   "add" {
-    canItAdd($Object);
+    canItAdd ($Object);
     Break;
   }
   "rm" {
-    canItRm(selectCannedResponse $Object);
+    canItRm (selectCannedResponse $Object);
     Break;
   }
   default {
