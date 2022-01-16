@@ -5,8 +5,8 @@ $cannedResponses = (Get-Content "$PSScriptRoot\can-it.json" | ConvertFrom-Json).
 function selectCannedResponse {
   param($cannedResponseName);
   if ($null -eq $cannedResponseName) {
-    canItList;
-    $cannedResponseName = Read-Host "Please select a canned response from the list above";
+    Write-Output "`nPlease specify either the name or ID of a canned response.`n`nRun ``can-it list`` to list all canned responses.`n";
+    Exit;
   }
   try {
     $cannedResponseIndex = [int] $cannedResponseName;
