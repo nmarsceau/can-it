@@ -1,7 +1,8 @@
 # Can It!
 Can It! is a PowerShell tool for managing and using canned responses.
 
-To install this program:
+## Installation
+
 1. Clone this repository to your computer.
 2. Define an alias in your PowerShell profile.
     
