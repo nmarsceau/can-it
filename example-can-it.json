@@ -1,24 +1,24 @@
 {
-  "cannedResponses": [
-    {
-      "name": "Meeting Invitation Response",
-      "body": "Dear {{ Name }},\n\nThank you for inviting me to your meeting at {{ Meeting Time }} on {{ Meeting Date }}. Unfortunately, I will be busy working and will be unable to attend.",
-      "fields": [
-        "Name",
-        "Meeting Time",
-        "Meeting Date"
-      ]
-    },
-    {
-      "name": "Project Request Response",
-      "body": "Dear {{ Name }},\n\nThank you for inviting me to work on {{ Project Name }} for you. I will have to decline as I have several projects of me own to attend to.",
-      "fields": [
-        "Name",
-        "Project Name"
-      ],
-      "defaults": {
-        "Name": "Bob"
-      }
-    }
-  ]
+    "cannedResponses": [
+        {
+            "name": "Meeting Invitation Response",
+            "body": "Dear {{ Name }},\n\nThank you for inviting me to your meeting at {{ Meeting Time }} on {{ Meeting Date }}. Unfortunately, I will be busy working and will be unable to attend.",
+            "fields": [
+                "Name",
+                "Meeting Time",
+                "Meeting Date"
+            ]
+        },
+        {
+            "name": "Project Request Response",
+            "body": "Dear {{ Name }},\n\nThank you for inviting me to work on {{ Project Name }} for you. I will have to decline as I have several projects of me own to attend to.",
+            "fields": [
+                "Name",
+                "Project Name"
+            ],
+            "defaults": {
+                "Name": "Bob"
+            }
+        }
+    ]
 }
