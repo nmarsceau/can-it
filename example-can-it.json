@@ -15,7 +15,10 @@
       "fields": [
         "Name",
         "Project Name"
-      ]
+      ],
+      "defaults": {
+        "Name": "Bob"
+      }
     }
   ]
 }

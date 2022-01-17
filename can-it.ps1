@@ -37,7 +37,16 @@ function canItUse {
     Clear-Host;
     Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
     foreach ($field in $cannedResponse.fields) {
-        $cannedResponse.body = $cannedResponse.body.Replace("{{ " + $field + " }}", (Read-Host $field).Trim());
+        $fieldPrompt = $field;
+        If ($null -ne $cannedResponse.defaults.$field) {
+            $cannedResponse.defaults.$field = $cannedResponse.defaults.$field.Trim();
+            $fieldPrompt += (" [" + $cannedResponse.defaults.$field + "]");
+        }
+        $fieldValue = (Read-Host $fieldPrompt).Trim();
+        If ($null -ne $cannedResponse.defaults.$field -and $fieldValue -eq "") {
+            $fieldValue = $cannedResponse.defaults.$field;
+        }
+        $cannedResponse.body = $cannedResponse.body.Replace("{{ " + $field + " }}", $fieldValue);
         Clear-Host;
         Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
     }
