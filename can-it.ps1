@@ -89,7 +89,9 @@ function canItHelp {
 
     Write-Output "`nRun ``can-it list`` to view a list of your canned responses, and ``can-it use`` to use one.";
     Write-Output "As you fill in each placeholder, the output will be updated to include what you entered.";
-    Write-Output "When you have filled in each placeholder, the output will be copied to your clipboard.`n";
+    Write-Output "When you have filled in each placeholder, the output will be copied to your clipboard.";
+
+    Write-Output "`nConfig file location: $PSScriptRoot\can-it.json`n";
 }
 
 switch ($Action) {
