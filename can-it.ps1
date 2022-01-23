@@ -69,19 +69,6 @@ function canItPeek {
     Write-Output (outputCannedResponse $cannedResponse.name $cannedResponse.body);
 }
 
-function canItAdd {
-    param($cannedResponse);
-    Write-Output "`nComing soon :)`n";
-}
-
-function canItRm {
-    param($cannedResponse);
-    ConvertTo-Json `
-        @{cannedResponses = $cannedResponses.where({ $_.name -ne $cannedResponse.name })} `
-        -Depth 10 `
-        | Set-Content "$PSScriptRoot\can-it.json";
-}
-
 function canItHelp {
     Write-Output "`nCan-It is a tool for using canned responses.";
     Write-Output "Canned response templates are stored in can-it.json and accessed via the command line.";
@@ -99,20 +86,12 @@ switch ($Action) {
         canItList;
         Break;
     }
-    "use" {
-        canItUse (selectCannedResponse $Object);
-        Break;
-    }
     "peek" {
         canItPeek (selectCannedResponse $Object);
         Break;
     }
-    "add" {
-        canItAdd ($Object);
-        Break;
-    }
-    "rm" {
-        canItRm (selectCannedResponse $Object);
+    "use" {
+        canItUse (selectCannedResponse $Object);
         Break;
     }
     default {
