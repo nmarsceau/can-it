@@ -70,15 +70,7 @@ function canItPeek {
 }
 
 function canItHelp {
-    Write-Output "`nCan-It is a tool for using canned responses.";
-    Write-Output "Canned response templates are stored in can-it.json and accessed via the command line.";
-    Write-Output "Use example-can-it.json as an example and define your own can-it.json.";
-
-    Write-Output "`nRun ``can-it list`` to view a list of your canned responses, and ``can-it use`` to use one.";
-    Write-Output "As you fill in each placeholder, the output will be updated to include what you entered.";
-    Write-Output "When you have filled in each placeholder, the output will be copied to your clipboard.";
-
-    Write-Output "`nConfig file location: $PSScriptRoot\can-it.json`n";
+    Write-Output (Get-Content "$PSScriptRoot\help.txt").Replace('{{ script root }}', $PSScriptRoot);
 }
 
 switch ($Action) {
