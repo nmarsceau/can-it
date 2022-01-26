@@ -5,7 +5,7 @@ Usage
     can-it command [parameters]
 
 Commands
-    list
+    ls
         Prints the names and index numbers of all canned response templates from the config file.
 
     peek [canned response]

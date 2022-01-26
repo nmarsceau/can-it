@@ -5,7 +5,7 @@ $cannedResponses = (Get-Content "$PSScriptRoot\can-it.json" | ConvertFrom-Json).
 function selectCannedResponse {
     param($cannedResponseName);
     if ($null -eq $cannedResponseName) {
-        Write-Output "`nPlease specify either the name or ID of a canned response.`n`nRun ``can-it list`` to list all canned responses.`n";
+        Write-Output "`nPlease specify either the name or ID of a canned response.`n`nRun ``can-it ls`` to list all canned responses.`n";
         Exit;
     }
     try {
@@ -74,7 +74,7 @@ function canItHelp {
 }
 
 switch ($Action) {
-    "list" {
+    "ls" {
         canItList;
         Break;
     }
