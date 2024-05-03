@@ -45,20 +45,16 @@ AliasesToExport = @('can-it')
 ModuleList = @('Can-It')
 
 # List of all files packaged with this module
-FileList = @('.\.gitignore', 'can-it.json', 'Can-It.psd1', 'Can-It.psm1', 'example-can-it.json', 'LICENSE', 'README.md')
+FileList = @('.gitignore', 'can-it.json', 'Can-It.psd1', 'Can-It.psm1', 'example-can-it.json', 'LICENSE', 'README.md')
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
-
     PSData = @{
         # A URL to the license for this module.
         LicenseUri = 'https://github.com/nmarsceau/can-it/blob/main/LICENSE'
 
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/nmarsceau/can-it'
-    } # End of PSData hashtable
-
-} # End of PrivateData hashtable
-
+    }
 }
-
+}
